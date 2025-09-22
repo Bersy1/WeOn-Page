@@ -294,6 +294,14 @@
         setTimeout(handleResize, 300);
       });
     });
+    document.querySelectorAll('.game-card').forEach(card => {
+  const title = card.querySelector('h3').textContent.trim();
+  if (title === 'Papeproyect') {
+    card.addEventListener('click', function() {
+      window.location.href = 'https://store.steampowered.com/app/3275410/Puppet_Project/';
+    });
+  }
+});
   </script>
 </body>
 </html>
