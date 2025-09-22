@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no">
   <title>WeOn! - Desarrollo de videojuegos chilenos innovadores</title>
   <style>
     * {
@@ -40,7 +40,7 @@
     nav a {
       color: #e0e0e0;
       text-decoration: none;
-      font-weight: 60; /* Changed from 600 for better readability */
+      font-weight: 60; 
       padding: 0.5rem 1rem;
       border-radius: 20px;
       transition: all 0.3s ease;
@@ -72,7 +72,7 @@
     }
 
     section {
-      padding-top: 8rem; /* Space below header */
+      padding-top: calc(8rem + 2vw); /* Responsive padding */
       padding-bottom: 3rem;
       min-height: 100vh;
       display: flex;
@@ -191,7 +191,7 @@
     /* Responsive adjustments */
     @media (max-width: 768px) {
       section {
-        padding-top: 6rem;
+        padding-top: calc(6rem + 2vw); /* Mobile responsive padding */
       }
       
       h2 {
@@ -200,6 +200,16 @@
       
       .game-cards {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding-top: calc(5rem + 2vw); /* Even smaller screens */
+      }
+      
+      h2 {
+        font-size: 1.7rem;
       }
     }
 
