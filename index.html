@@ -70,14 +70,21 @@
       opacity: 1;
     }
 
-    .animate-click {
-      transform: scale(1.05) !important;
-      box-shadow: 0 0 15px rgba(76, 201, 240, 0.3);
+    /* Only hover animation (no click effect) */
+    .hover-pulse {
+      position: relative;
+      z-index: 2;
       transition: all 0.2s ease;
     }
 
+    .hover-pulse:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(76, 201, 240, 0.3);
+    }
+
     section {
-      padding: 3rem 1rem;
+      padding-top: 8rem; /* Added space below header */
+      padding-bottom: 3rem;
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -90,6 +97,12 @@
       margin-bottom: 1.5rem;
       position: relative;
       z-index: 2;
+      animation: fadeInUp 0.6s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .game-cards {
@@ -180,71 +193,38 @@
     .contact-form button:active {
       transform: translateY(0);
     }
-
-    /* Animation effects for scrolling */
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(76, 201, 240, 0.3); }
-      70% { box-shadow: 0 0 0 15px rgba(76, 201, 240, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(76, 201, 240, 0); }
-    }
-
-    .pulse {
-      animation: pulse 1.5s infinite;
-    }
-
-    /* Smooth scroll effect */
-    .scroll-effect {
-      position: relative;
-      z-index: 1;
-      transition: all 0.3s ease;
-    }
-
-    .scroll-effect::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(to right, transparent, #4cc9f0, transparent);
-      opacity: 0.3;
-    }
-
-    .scroll-effect:hover::before {
-      opacity: 0.6;
-    }
   </style>
 </head>
 <body>
   <header>
     <nav>
       <ul>
-        <li><a href="#home" class="pulse">Home</a></li>
-        <li><a href="#about" class="pulse">Sobre Nosotros</a></li>
-        <li><a href="#games" class="pulse">Juegos</a></li>
-        <li><a href="#contact" class="pulse">Contacto</a></li>
+        <li><a href="#home" class="hover-pulse">Home</a></li>
+        <li><a href="#about" class="hover-pulse">Sobre Nosotros</a></li>
+        <li><a href="#games" class="hover-pulse">Juegos</a></li>
+        <li><a href="#contact" class="hover-pulse">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="home" class="scroll-effect">
+  <section id="home">
     <h2>WeOn!</h2>
     <p>Transformamos ideas creativas en experiencias de juego memorables para jugadores globales.</p>
   </section>
 
-  <section id="about" class="scroll-effect">
+  <section id="about">
     <h2>Sobre Nosotros</h2>
     <p>WeOn! es un estudio chileno especializado en el desarrollo de videojuegos innovadores desde concepto hasta lanzamiento. Con equipos multidisciplinarios y enfoque en calidad, creamos productos que inspiran y entretienen a jugadores de todo el mundo.</p>
     
     <h3>¡Síguenos en redes sociales!</h3>
     <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-      <a href="https://www.instagram.com/weon_media" target="_blank" class="pulse">Instagram</a>
-      <a href="https://www.tiktok.com/@on1yb?lang=es" target="_blank" class="pulse">TikTok</a>
-      <a href="https://x.com/PuppeteersDevs" target="_blank" class="pulse">X (Twitter)</a>
+      <a href="https://www.instagram.com/weon_media" target="_blank" class="hover-pulse">Instagram</a>
+      <a href="https://www.tiktok.com/@on1yb?lang=es" target="_blank" class="hover-pulse">TikTok</a>
+      <a href="https://x.com/PuppeteersDevs" target="_blank" class="hover-pulse">X (Twitter)</a>
     </div>
   </section>
 
-  <section id="games" class="scroll-effect">
+  <section id="games">
     <h2>Nuestros Juegos</h2>
     <div class="game-cards">
       <div class="game-card">
@@ -258,7 +238,7 @@
     </div>
   </section>
 
-  <section id="contact" class="scroll-effect">
+  <section id="contact">
     <h2>Contacto</h2>
     <p>¿Tienes preguntas o quieres colaborar? ¡No dudes en contactarnos!</p>
     
@@ -277,6 +257,20 @@
   </footer>
 
   <script>
+    // Only hover animations (no click effect)
+    document.querySelectorAll('nav a').forEach(anchor =>
+      {
+        anchor.addEventListener('mouseover', function () {
+          this.classList.add('hover-pulse');
+          
+          setTimeout(() => {
+            this.classList.remove('hover-pulse');
+          }, 200);
+        });
+      }
+    );
+    
+    // Smooth scroll for sections
     document.querySelectorAll('a[href^="#"]').forEach(anchor =>
       {
         anchor.addEventListener('click', function (e) {
@@ -284,34 +278,14 @@
           
           const target = document.querySelector(this.getAttribute('href'));
           if (target) {
-            // Add animation to clicked button
-            this.classList.add('animate-click');
-            
-            // Smooth scroll with animation effect
             window.scrollTo({
               top: target.offsetTop - 80,
               behavior: 'smooth'
             });
-            
-            // Remove animation after 200ms
-            setTimeout(() => {
-              this.classList.remove('animate-click');
-            }, 200);
           }
         });
       }
     );
-    
-    // Add scroll effect to sections
-    document.querySelectorAll('.scroll-effect').forEach(section => {
-      section.addEventListener('mouseenter', () => {
-        section.style.opacity = '1';
-      });
-      
-      section.addEventListener('mouseleave', () => {
-        section.style.opacity = '0.95';
-      });
-    });
   </script>
 </body>
 </html>
