@@ -1,338 +1,234 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeOn Studios</title>
-    <meta name="description" content="WeOn Studios is a professional indie video game studio and puts passion in each pixel.">
-    <meta name="author" content="Dvmivn">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="WeOn Studios - Pixel-art indie game studio">
-    <meta property="og:description" content="WeOn Studios is a professional indie video game studio and puts passion in each pixel.">
-    <meta property="og:image" content="assets/og-cover.png">
-    <meta property="og:locale" content="en_US">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="WeOn Studios - Pixel-art indie game studio">
-    <meta name="twitter:description" content="WeOn Studios is a professional indie video game studio and puts passion in each pixel.">
-    <meta name="twitter:image" content="assets/og-cover.png">
-    <link rel="icon" href="https://weonstudios.com/assets/favicon/favicon-96x96.png" type="image/png">
-    <link rel="icon" href="https://weonstudios.com/assets/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="https://weonstudios.com/assets/favicon/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://weonstudios.com/">
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="WeOn%20Studios_files/css2.css" rel="stylesheet">
-    <link rel="stylesheet" href="WeOn%20Studios_files/styles.css">
-    <script src="WeOn%20Studios_files/main.js" defer="defer"></script>
-    <script type="application/ld+json" src="WeOn%20Studios_files/organization.jsonld"></script>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeOn! - Desarrollo de videojuegos innovadores en Chile</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #e0e0e0;
+      background-color: #0a0a12;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4cc9f0, #00b4d8);
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #4cc9f0;
+    }
+
+    .hero {
+      background: url('https://via.placeholder.com/1200x400/e0e0e0/000000?text=WeOn!+en+Chile') no-repeat center center fixed;
+      background-size: cover;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin: 1rem 0;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: #4cc9f0;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+    }
+
+    .game-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin: 1rem 0;
+      transition: transform 0.3s;
+    }
+
+    .game-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .game-card h3 {
+      color: #4cc9f0;
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 4px;
+      background-color: #252530;
+      color: #e0e0e0;
+      border: none;
+      font-family: inherit;
+    }
+
+    button {
+      background: linear-gradient(90deg, #4cc9f0, #00b4d8);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #3ab7e2, #00a0c0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      color: #888;
+      border-top: 1px solid #333;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="header-spacer" aria-hidden="true"></div>
-    <header class="site-header" role="banner">
-        <nav class="nav" aria-label="Primary">
-            <a class="nav__brand" href="#home" aria-label="Home">
-                <img src="WeOn%20Studios_files/imagotipo-64.svg" alt="WeOn Studios">
-            </a>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre">Sobre Nosotros</a></li>
+        <li><a href="#juegos">Juegos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <button class="nav__toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open menu">
-                <span class="nav__burger" aria-hidden="true"></span>
-            </button>
+  <section id="inicio" class="hero">
+    <h2>WeOn!</h2>
+    <p>Transformamos ideas creativas en experiencias de juego memorables para jugadores globales, desde el corazón de Chile.</p>
+  </section>
 
-            <div id="nav-menu" class="nav__menu" hidden="">
-                <ul class="nav__list">
-                    <li><a href="#games">Games</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+  <section id="sobre" style="margin-top: 1.5rem;">
+    <h2>Sobre Nosotros</h2>
+    <p>WeOn! es una compañía chilena especializada en el desarrollo de videojuegos innovadores desde concepto hasta lanzamiento. Con equipos multidisciplinarios y enfoque en calidad, creamos productos que inspiran y entretienen a jugadores de todo el mundo, con raíces en Chile.</p>
+  </section>
 
-                <div class="nav__socials" aria-label="Social links">
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Discord">
-                        <img src="WeOn%20Studios_files/dc-white-40.svg" alt="" aria-hidden="true">
-                    </a>
-                    <a href="https://www.youtube.com/@WeOnGameStudios" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                        <img src="WeOn%20Studios_files/yt-white-40.svg" alt="" aria-hidden="true">
-                    </a>
-                    <a href="https://www.tiktok.com/@weonstudios" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                        <img src="WeOn%20Studios_files/tiktok-white-40.svg" alt="" aria-hidden="true">
-                    </a>
-                    <a href="https://www.instagram.com/weongames/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <img src="WeOn%20Studios_files/ig-white-40.svg" alt="" aria-hidden="true">
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <section id="juegos" style="margin-top: 1.5rem;">
+    <h2>Nuestros Juegos</h2>
+    <div class="game-cards">
+      <div class="game-card">
+        <h3>Sueños en el Desierto</h3>
+        <p>Juego de aventuras en 3D con narrativa emocional y mundos mágicos inspirados en la cultura chilena.</p>
+      </div>
+      <div class="game-card">
+        <h3>Competencia en el Tiempo</h3>
+        <p>Aventura estratégica donde cada segundo cuenta en un entorno dinámico, con toques chilenos.</p>
+      </div>
+    </div>
+  </section>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero__art">
-                <img class="hero__image" src="WeOn%20Studios_files/hero-350.png" srcset="WeOn%20Studios_files/hero-350.png 320w, WeOn%20Studios_files/hero-640.png 640w, WeOn%20Studios_files/hero-750.png 750w, WeOn%20Studios_files/hero-1500.png 1500w, WeOn%20Studios_files/hero-1900.png 1900w" sizes="(max-width: 599px) calc(100vw - 48px),
-                    (max-width: 999px) calc(100vw - 64px),
-                    59vw" alt="WeOn studios hero image" fetchpriority="high" decoding="async">
-            </div>
+  <section id="contacto" style="margin-top: 1.5rem;">
+    <h2>Contacto</h2>
+    <p>¿Tienes preguntas o quieres colaborar? ¡No dudes en contactarnos!</p>
 
-            <div class="hero__copy">
-                <p class="hero__copy-since">Since 2023</p>
-                <img class="hero__copy-logo" src="WeOn%20Studios_files/logotipo-188.png" srcset="WeOn%20Studios_files/logotipo-188.png 188w, WeOn%20Studios_files/logotipo-297.png 297w, WeOn%20Studios_files/logotipo-400.png 400w" sizes="(max-width: 599px) 188px, 
-                    (max-width: 999px) 297px, 
-                    400px" alt="WeOn studios logotype" decoding="async">
-                <h1 class="hero__copy-headline">
-                    We're a professional indie video game studio and we put passion in each pixel.
-                </h1>
-                <a class="hero__copy-btn" href="#contact">Let's talk</a>
-            </div>
-        </section>
+    <form class="contact-form">
+      <input type="text" placeholder="Nombre completo">
+      <input type="email" placeholder="Correo electrónico">
+      <textarea rows="4" placeholder="Mensaje"></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </section>
 
-        <section id="games" class="games-container">
-            <div class="games-title">
-            <h2>Our Games</h2>
-            <p>Every world starts with an idea. <br>These are ours - early but in motion.</p>
-            </div>
+  <footer>
+    <p>&copy; 2023 WeOn! - Desarrollo de videojuegos en Chile. Todos los derechos reservados.</p>
+  </footer>
 
-            <div id="parokuuu" class="games-grid">
-                <article class="game-card">
-                    <div class="game-card__art">
-                        <img class="game-card__img" src="WeOn%20Studios_files/parokuuu-350.webp" srcset="WeOn%20Studios_files/parokuuu-700.webp 600w" sizes="(max-width: 599px) 320px, 700px" alt="Parokuuu screenshot" loading="lazy" decoding="async">
-                    </div>
-                    <div class="game-card__copy">
-                        <h3 class="game-card__title">PAROKUUU!</h3>
-                        <p class="game-card__status">In development!</p>
-                        <p class="game-card__description">
-                            We're reinventing rock, paper, scissors into
- a chaotic deck-building roguelike. It's bold, it's weird, and it's full
- of surprises - just like we like it.<br><br>
-                            Built in Unity. Stay tuned!
-                        </p>
-                        <a class="game-card__cta" href="" data-placeholder="true" aria-disabled="true">Take a peek</a>
-                    </div>
-                </article>
-            </div>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor =>
+    {
+      anchor.addEventListener('click', function (e)
+      {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target)
+        {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
 
-            <div id="astronic" class="games-grid">
-                <article class="game-card">
-                    <div class="game-card__art">
-                        <img class="game-card__img" src="WeOn%20Studios_files/astronic-350.webp" srcset="WeOn%20Studios_files/astronic-700.webp 600w" sizes="(max-width: 599px) 320px, 700px" alt="Astronic screenshot" loading="lazy" decoding="async">
-                    </div>
-                    <div class="game-card__copy">
-                        <h3 class="game-card__title">ASTRONIC</h3>
-                        <p class="game-card__status">Prototype</p>
-                        <p class="game-card__description">
-                            Blasting through deep space never felt so retro. <br><br>
-                            <span class="pink">Astronic</span> is a 
-fast-paced, 2D arcade shoot'em up built for mobile, where you pilot a 
-pixel-powered ship through waves of enemies and dodge bullet patterns in
- style. <br><br>
-                            Crafted in Construct 3.
-                        </p>
-                        <a class="game-card__cta" href="" data-placeholder="true" aria-disabled="true">Watch it in action</a>
-                    </div>
-                </article>
-            </div>
-
-            <div id="metamorphosis" class="games-grid">
-                <article class="game-card">
-                    <div class="game-card__art">
-                        <img class="game-card__img" src="WeOn%20Studios_files/metamorphosis-350.webp" srcset="WeOn%20Studios_files/metamorphosis-700.webp 600w" sizes="(max-width: 599px) 320px, 700px" alt="Metamorphosis screenshot" loading="lazy" decoding="async">
-                    </div>
-                    <div class="game-card__copy">
-                        <h3 class="game-card__title">METAMORPHOSIS</h3>
-                        <p class="game-card__status">Prototype</p>
-                        <p class="game-card__description">
-                            A girl. A school. Something terribly wrong.<br><br>
-                            <span class="pink">Metamorphosis</span>is a short, story-driven horror experience with isometric pixel art and creeping atmosphere. <br><br>
-                            You'll explore eerie corridors, uncover dark
- secrets, and walk a fine line between dream and nightmare.<br><br>
-                            Developed in Construct 3.
-                        </p>
-                        <a class="game-card__cta" href="" data-placeholder="true" aria-disabled="true">Enter if you dare</a>
-                    </div>
-                </article>
-            </div>
-
-            <div id="velein" class="games-grid">
-                <article class="game-card">
-                    <div class="game-card__art">
-                        <img class="game-card__img" src="WeOn%20Studios_files/velein-350.webp" srcset="WeOn%20Studios_files/velein-700.webp 600w" sizes="(max-width: 599px) 320px, 700px" alt="Velein screenshot" loading="lazy" decoding="async">
-                    </div>
-                    <div class="game-card__copy">
-                        <h3 class="game-card__title">VELEIN</h3>
-                        <p class="game-card__status">Prototype</p>
-                        <<p class="game-card__description">
-                            Dodge chaos. Face the arcana. Rise again.<br><br>
-                            <span class="pink">Velein</span> is a pixel-art bullet-hell and boss-rush experience inspired by Tarot symbolism. <br><br>
-                            Each boss is a living card — mystical, 
-monstrous, and relentless. Read the patterns, survive the storm, and 
-find meaning in every encounter.<br><br>
-                            Developed in Unity.
-                        </p>
-                        <a class="game-card__cta" href="" data-placeholder="true" aria-disabled="true">Peek into the chaos</a>
-                    </div>
-                </article>
-            </div>              
-        </section>
-
-        <section id="about" class="about-container">
-            <article class="about-us">
-                <h2>About Us</h2>
-                <p>Hi! We're <span class="pink">WEON STUDIOS.</span><br><br>
-                    A small but passionate team of pixel-art lovers, world-builders, and game dreamers.<br><br>
-                    Pixel by pixel, we create experiences that blend 
-style and meaning - from interactive stories to immersive spaces.<br><br>
-                    Whether it's designing gameplay or crafting 
-architectural visualizations, we're here to make ideas come alive.
-                </p>
-                <img src="WeOn%20Studios_files/team-900.webp" alt="WeOn studios team" loading="lazy" decoding="async">
-            </article>
-
-            <article class="what-we-do">
-                <h2>What we do</h2>
-                <p>We work across two main areas:<br><br>
-                    <span class="bold">Game development</span> - where creativity runs wild, gameplay matters, and every detail counts.<br><br>
-                    <span class="bold">ArchViz</span> - where we help bring imagined environments into vivid, pixel-perfect form.<br><br>
-                    In everything we do, we stick to three things:<br>
-                    <span class="blue">Precision</span> - <span class="purple">Expression</span> - <span class="pink">Care.</span><br><br>
-                    Because for us, it's not just about making something that looks good. It's about making something that <span class="bold">feels right.</span><br><br>
-                    <span class="pink">Passion in each pixel.</span><br>
-                    That's our way of working, and our way of thinking.</p>
-            </article>
-
-            <article class="our-philosophy">
-                <h2>Our Philosophy</h2>
-                <p>At our core, we believe ideas are meant to be shared.<br><br>
-                    Our studio isn't just a dev team - it's a space 
-where creativity becomes real, pixels tells stories, and every project 
-is a new chance to explore, learn and connect.<br><br>
-                    We aim for <br>
-                    <span class="pink">quality over quantity</span><br><br>
-                    And while we're just getting started, we're here to make it count — one pixel at a time.</p>
-            </article>
-        </section>
-
-        <section id="team" class="team-container">
-            <h2>Meet the team</h2>
-            <div class="team-grid">
-                <article class="team-member">
-                    <div class="team-member__art">
-                        <img class="team-member__photo" src="WeOn%20Studios_files/Koda_blue_320.png" alt="Koda photo" loading="lazy" decoding="async">
-                    </div>
-
-                    <div class="team-member__copy">
-                        <p class="team-member__role">Co-Founder - Lead programmer</p>
-                        <h3 class="team-member__name">KODA</h3>
-                        <p class="team-member__bio">Turns ideas into systems. Leads development with precision and heart.</p>
-                    </div>
-                </article>
-
-                <article class="team-member">
-                    <div class="team-member__art">
-                        <picture>
-                            <source media="(min-width: 1000px)" srcset="WeOn%20Studios_files/ElZeba_purple_320.png 1x">
-                            <img class="team-member__photo" src="WeOn%20Studios_files/ElZeba_blue_320.png" alt="ElZeba photo" loading="lazy" decoding="async">
-                        </picture>
-                    </div>
-                        
-                    <div class="team-member__copy">
-                        <p class="team-member__role">Co-Founder - Creative director. Pixel &amp; Tech artist</p>
-                        <h3 class="team-member__name">ELZEBA</h3>
-                        <p class="team-member__bio">The visual brain behind the studio. Designs, animates, and connects every creative dot.</p>
-                    </div>
-                </article>
-
-                <article class="team-member">
-                    <div class="team-member__art">
-                        <picture>
-                            <source media="(min-width: 1000px)" srcset="WeOn%20Studios_files/Fenaaa_pink_320.png 1x">
-                            <img class="team-member__photo" src="WeOn%20Studios_files/Fenaaa_purple_320.png" alt="Fenaaa photo" loading="lazy" decoding="async">
-                        </picture>
-                    </div>
-                    
-                    <div class="team-member__copy">
-                        <p class="team-member__role">Concept artist &amp; UX/UI designer</p>
-                        <h3 class="team-member__name">FENAAA</h3>
-                        <p class="team-member__bio">Gives shape to ideas and brings user journeys to life with intuitive design</p>
-                    </div>
-                </article>
-
-                <article class="team-member">
-                    <div class="team-member__art">
-                        <picture>
-                            <source media="(min-width: 1000px)" srcset="WeOn%20Studios_files/Cris_blue_320.png 1x">
-                            <img class="team-member__photo" src="WeOn%20Studios_files/Cris_purple_320.png" alt="Cris Lagos photo" loading="lazy" decoding="async">
-                        </picture>
-                    </div>
-                    
-                    <div class="team-member__copy">
-                        <p class="team-member__role">3D artist</p>
-                        <h3 class="team-member__name">CRIS_LAGOS</h3>
-                        <p class="team-member__bio">Builds beautiful forms and spaces adding dimension where it counts</p>
-                    </div>
-                </article>
-
-                <article class="team-member">
-                    <div class="team-member__art">
-                        <picture>
-                            <source media="(min-width: 1000px)" srcset="WeOn%20Studios_files/Draume_purple_320.png 1x">
-                            <img class="team-member__photo" src="WeOn%20Studios_files/Draume_pink_320.png" alt="Draume photo" loading="lazy" decoding="async">
-                        </picture>
-                    </div>
-
-                    <div class="team-member__copy">
-                        <p class="team-member__role">Concept artist &amp; Character designer</p>
-                        <h3 class="team-member__name">DRAUME</h3>
-                        <p class="team-member__bio">Invents faces, stones and silhouettes. Makes every character unforgettable</p>
-                    </div>                    
-                </article>
-
-                <article class="team-member">
-                    <div class="team-member__art">
-                        <img class="team-member__photo" src="WeOn%20Studios_files/Charquican_pink_320.png" alt="Charquican photo" loading="lazy" decoding="async">
-                    </div>
-                    
-                    <div class="team-member__copy">
-                        <p class="team-member__role">Pixel artist</p>
-                        <h3 class="team-member__name">CHARQUICAN</h3>
-                        <p class="team-member__bio">Lives for detail. Brings depth and motion to every sprite and background.</p>
-                    </div>                
-                </article>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-container">
-            <h2>Want to get in touch?</h2>
-            <p><span class="pink">Let's talk!</span><br><br>
-                Whether you have a project in mind, a question to ask, or just want to say hi — we'd love to hear from you.<br><br>
-                We're always open to new ideas, collaborations, or just a good chat.<br><br>
-                Let's build something cool together.<br>
-                <a href="mailto:contact@weonstudios.com"><span class="pink bold">contact@weonstudios.com</span></a>
-            </p>
-            <div class="catch-us">
-                <p class="socials-title">CATCH US HERE</p>
-                <div class="contact-socials" aria-label="Social links">
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Discord">
-                        <img src="WeOn%20Studios_files/dc-purple-40.svg" alt="" aria-hidden="true">
-                    </a>
-                    <a href="https://www.youtube.com/@WeOnGameStudios" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                        <img src="WeOn%20Studios_files/yt-purple-40.svg" alt="" aria-hidden="true">
-                    </a>
-                    <a href="https://www.tiktok.com/@weon_studios" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                        <img src="WeOn%20Studios_files/tiktok-purple-40.svg" alt="" aria-hidden="true">
-                    </a>
-                    <a href="https://www.instagram.com/weon_games/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <img src="WeOn%20Studios_files/ig-purple-40.svg" alt="" aria-hidden="true">
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer" role="contentinfo">
-        <p>© 2025 WeOn Studios. All rights reserved.</p>
-        <p>Site designed by Dvmivn</p>
-    </footer>
-
-</body></html>
-<|im_start|>
+</html>
